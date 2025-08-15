@@ -442,8 +442,8 @@ const makeApiCall = async (promptText: string) => {
   canSend.value = false
 
   // NOTE: Ensure your local server is running and accessible at this address.
-  const API_BASE_URL = 'http://0.0.0.0:8001'
-  const PROMPT_URL = API_BASE_URL + '/process-prompt'
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+  const PROMPT_URL = API_BASE_URL + '/api/v1/process-prompt'
   const payload = { prompt: promptText }
 
   try {
@@ -496,7 +496,7 @@ const handleKeyDown = (e: KeyboardEvent) => {
 }
 
 async function getThreads() {
-  const API_BASE_URL = 'http://0.0.0.0:8001'
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
   const thread_url = API_BASE_URL + '/api/v1/threads/search'
 
   try {
