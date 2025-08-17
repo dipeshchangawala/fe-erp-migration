@@ -547,6 +547,6 @@ onMounted(async () => {
   // Force a reflow to ensure styles are applied
   document.body.offsetHeight
 
-  await getThreads()
+  // await getThreads()
 })
 </script>
